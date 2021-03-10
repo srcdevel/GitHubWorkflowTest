@@ -41,5 +41,20 @@ jobs:
         scanners: sast
         bug_tracker: Github
         params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
 
         sarif_file: cx.sarif
