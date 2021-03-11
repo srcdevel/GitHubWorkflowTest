@@ -35,12 +35,14 @@ jobs:
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.0-9.x
       #uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1
       with:
+      
+      
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
         team: 'CxServer/SP/APJ'
         #checkmarx_url: ${{ secrets.CHECKMARX_URL }}
-        checkmarx_url: 'https://cxapactrial.checkmarx.net/CxWebClient/'
+        checkmarx_url: 'https://cxapactrial.checkmarx.net'
         #checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-        checkmarx_username: cxtrialdemo@gmail.com
+        checkmarx_username: 'cxtrialdemo@gmail.com'
         #checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_password: 'Cx!123456'
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
