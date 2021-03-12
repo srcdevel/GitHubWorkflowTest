@@ -37,16 +37,16 @@ jobs:
       with:    
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
         team: 'CxServer/SP/APJ'
-        #checkmarx_url: ${{ secrets.CHECKMARX_URL }}
-        checkmarx_url: 'https://cxapactrial.checkmarx.net'
-        #checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-        checkmarx_username: 'cxtrialdemo@gmail.com'
-        #checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-        checkmarx_password: 'Cx!123456'
+        checkmarx_url: ${{ secrets.CHECKMARX_URL }}
+        #checkmarx_url: 'https://cxapactrial.checkmarx.net'  
+        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
+        #checkmarx_username: 'xxx'
+        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
+        #checkmarx_password: 'xxx'
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         incremental: false
     # Upload the Report for CodeQL/Security Alerts
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: cx.sarif
+    #- name: Upload SARIF file
+    #  uses: github/codeql-action/upload-sarif@v1
+    #  with:
+    #    sarif_file: cx.sarif
