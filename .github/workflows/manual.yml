@@ -37,7 +37,7 @@ jobs:
       with:    
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
         team: 'CxServer/SP/APJ'
-        checkmarx_url: ${{ secrets.CHECKMARX_URL }}
+        checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
         #checkmarx_url: 'https://cxapactrial.checkmarx.net'  
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         #checkmarx_username: 'xxx'
