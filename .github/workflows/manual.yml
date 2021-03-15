@@ -43,8 +43,10 @@ jobs:
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         #checkmarx_username: 'xxx' 
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-        #checkmarx_password: 'xxx'
+        #checkmarx_password: 'xxx'     
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+        # Break build based on Checkmarx findings?
+        # break_build: # optional
         incremental: false
         # Upload the Report for CodeQL/Security Alerts
         #- name: Upload SARIF file                     
