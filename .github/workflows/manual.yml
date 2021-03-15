@@ -36,26 +36,22 @@ jobs:
       #uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1 
       with:    
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
+        #project: 'GitHubWorkflowTest'
         team: 'CxServer/SP/APJ'
         checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
         #checkmarx_url: 'https://cxapactrial.checkmarx.net'   
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         #checkmarx_username: 'xxx' 
-        
-        
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         #checkmarx_password: 'xxx'
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         incremental: false
         # Upload the Report for CodeQL/Security Alerts
         #- name: Upload SARIF file                     
-        #  uses: github/codeql-action/upload-sarif@v1
+        #  uses: github/codeql-action/upload-sarif@v1  
         #  with:
         #    sarif_file: cx.sarif
         # GitHub API Token (note: you don't have to create secrets.GITHUB_TOKEN, it is created automatically and will not appear in your repo's custom secrets)
-        #github_token: ${{secrets.GH_TOKEN}}
-        # extra parameters for Jira integration
-        #params: --bug-tracker=jira --config=cx.config --repo-name=GitHubWorkflowTest --namespace=jbruinaud --branch=master --jira.url=${{secrets.JIRA_URL}} --jira.username=${{secrets.JIRA_USER}} --jira.token=${{secrets.JIRA_TOKEN}}
       
     # Build the JavaVulnerableLab project
     - name: Build with Maven
