@@ -41,10 +41,10 @@ jobs:
         #checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
         #checkmarx_url: 'https://cxapactrial.checkmarx.net' 
         checkmarx_url: 'http://6b68ca1545db.ngrok.io'
-        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-        #checkmarx_username: 'xxx' 
-        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-        #checkmarx_password: 'xxx'     
+        #checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
+        checkmarx_username: 'admin@cx.com' 
+        #checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
+        checkmarx_password: 'Cx!123456'     
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         # Break build based on Checkmarx findings?
         # break_build: # optional
