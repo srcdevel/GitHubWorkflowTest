@@ -37,7 +37,8 @@ jobs:
       with:    
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
         #project: 'GitHubWorkflowTest'
-        team: 'CxServer/SP/APJ'
+        #team: 'CxServer/SP/APJ'
+        team: 'CxServer'
         #checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
         #checkmarx_url: 'https://cxapactrial.checkmarx.net' 
         checkmarx_url: 'http://6b68ca1545db.ngrok.io'
