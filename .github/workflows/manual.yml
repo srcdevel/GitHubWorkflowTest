@@ -48,6 +48,7 @@ jobs:
         checkmarx_password: 'Cx!123456'     
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         # Break build based on Checkmarx findings?
+        
         # break_build: # optional
         incremental: false
         # Upload the Report for CodeQL/Security Alerts
@@ -57,6 +58,6 @@ jobs:
         #    sarif_file: cx.sarif
         # GitHub API Token (note: you don't have to create secrets.GITHUB_TOKEN, it is created automatically and will not appear in your repo's custom secrets)
       
-    # Build the JavaVulnerableLab project
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+        # Build the JavaVulnerableLab project
+        #- name: Build with Maven
+        #run: mvn -B package --file pom.xml
