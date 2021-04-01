@@ -1,12 +1,10 @@
-# https://github.com/cx-demo/cxflow-JavaVulnerableLab/blob/master/.github/workflows/checkmarx-cxflow-github-action.yml
-
 name: checkmarx-cxflow-github-action
 
 on:
   push:
     branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -36,20 +34,17 @@ jobs:
       #uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1 
       with:    
         project: ${{ env.REPO_NAME }}-${{ steps.extract_branch.outputs.branch }}
-        #project: 'GitHubWorkflowTest'
-        #team: 'CxServer/SP/APJ'
-        team: 'CxServer'
-        #checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
-        #checkmarx_url: 'https://cxapactrial.checkmarx.net' 
-        checkmarx_url: 'http://6b68ca1545db.ngrok.io'
-        #checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-        checkmarx_username: 'admin@cx.com' 
-        #checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-        checkmarx_password: 'Cx!123456'     
+        app: APPSEC
+        team: 'CxServer/SP/APJ'
+        checkmarx_url: ${{ secrets.CHECKMARX_URL }}    
+        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
+        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         # Break build based on Checkmarx findings?
         # break_build: # optional
-        #incremental: false
+        incremental: true
+        # GitHub API Token (note: you don't have to create secrets.GITHUB_TOKEN, it is created automatically and will not appear in your repo's custom secrets)
+        github_token: ${{secrets.GITHUB_TOKEN}}        
         # Upload the Report for CodeQL/Security Alerts
         #- name: Upload SARIF file                     
         #  uses: github/codeql-action/upload-sarif@v1  
@@ -59,3 +54,5 @@ jobs:
         # Build the JavaVulnerableLab project
         #- name: Build with Maven
         #run: mvn -B package --file pom.xml
+        # extra parameters
+        params: --bug-tracker=jira --config=cx.config --repo-name=GitHubWorkflowTest --namespace=jbruinaud --branch=master --jira.url=${{secrets.JIRA_URL}} --jira.username=${{secrets.JIRA_USER}} --jira.token=${{secrets.JIRA_TOKEN}}
